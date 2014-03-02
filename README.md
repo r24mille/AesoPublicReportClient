@@ -3,7 +3,7 @@ AesoPublicReportClient
 
 Java client to the Alberta Electric System Operator (AESO) .csv reports.
 
-I've now set up a poor-man's Maven repository that I am using for my projects which reference these libraries. To add these libraries as a dependency to your project using maven:
+For now, I've now set up a Maven repository on Github that can be used to reference these libraries. To add these libraries as a dependency to your project using maven:
 
 ```xml
 <repositories>
