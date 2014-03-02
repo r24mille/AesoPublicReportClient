@@ -6,6 +6,18 @@ public class GenerationUnit {
 	private double maximumCapability;
 	private double totalNetGeneration;
 	private double dispatchedContingencyReserve;
+	
+	@Override
+	public String toString() {
+		StringBuffer stringBuf = new StringBuffer();
+		stringBuf.append("\"GenerationUnit\": {");
+		stringBuf.append("\"generatorType\": " + this.generatorType + ", ");
+		stringBuf.append("\"unitName\": " + this.unitName + ", ");
+		stringBuf.append("\"maximumCapability\": " + this.maximumCapability + ", ");
+		stringBuf.append("\"totalNetGeneration\": " + this.totalNetGeneration + ", ");
+		stringBuf.append("\"dispatchedContingencyReserve\": " + this.dispatchedContingencyReserve + "}");
+		return stringBuf.toString();
+	}
 
 	public GeneratorType getGeneratorType() {
 		return generatorType;

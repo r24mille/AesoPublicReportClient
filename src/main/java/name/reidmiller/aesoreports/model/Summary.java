@@ -1,5 +1,6 @@
 package name.reidmiller.aesoreports.model;
 
+
 public class Summary {
 	private double albertaTotalNetGeneration;
 	private double interchange;
@@ -14,7 +15,20 @@ public class Summary {
 	
 	@Override
 	public String toString() {
-		return super.toString();
+		StringBuffer stringBuf = new StringBuffer();
+		stringBuf.append("\"Summary\": {");
+		stringBuf.append("\"albertaTotalNetGeneration\": " + this.albertaTotalNetGeneration + ", ");
+		stringBuf.append("\"interchange\": " + this.interchange + ", ");
+		stringBuf.append("\"albertaInternalLoad\": " + this.albertaInternalLoad + ", ");
+		stringBuf.append("\"albertaLoadResponsibility\": " + this.albertaLoadResponsibility + ", ");
+		stringBuf.append("\"contingencyreserveRequired\": " + this.contingencyreserveRequired + ", ");
+		stringBuf.append("\"dispatchedContingencyReserve\": " + this.dispatchedContingencyReserve + ", ");
+		stringBuf.append("\"dispatchedContingencyReserveGen\": " + this.dispatchedContingencyReserveGen + ", ");
+		stringBuf.append("\"dispatchedContingencyReserveOther\": " + this.dispatchedContingencyReserveOther + ", ");
+		stringBuf.append("\"lssiArmedDispatch\": " + this.lssiArmedDispatch + ", ");
+		stringBuf.append("\"lssiOfferedVolume\": " + this.lssiOfferedVolume);
+		stringBuf.append("}");
+		return stringBuf.toString();
 	}
 
 	public double getAlbertaTotalNetGeneration() {

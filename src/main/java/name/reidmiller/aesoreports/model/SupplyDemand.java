@@ -10,6 +10,47 @@ public class SupplyDemand {
 	private List<Interchange> interchanges;
 	private List<GenerationUnit> generationUnits;
 
+	@Override
+	public String toString() {
+		StringBuffer stringBuf = new StringBuffer();
+		stringBuf.append("\"Summary\": {");
+		stringBuf.append("\"lastUpdate\": \"" + this.lastUpdate + "\", ");
+		stringBuf.append("\"summary\": {" + this.summary.toString() + "}, ");
+		
+		if (this.generationGroups != null) {
+			stringBuf.append("\"generationGroups\": [");
+			for (GenerationGroup generationGroup : this.generationGroups) {
+				stringBuf.append("{" + generationGroup.toString() + "}, ");
+			}
+			stringBuf.append("], ");
+		} else {
+			stringBuf.append("\"generationGroups\": \"null\", ");
+		}
+		
+		if (this.interchanges != null) {
+			stringBuf.append("\"interchanges\": [");
+			for (Interchange interchange : this.interchanges) {
+				stringBuf.append("{" + interchange.toString() + "}, ");
+			}
+			stringBuf.append("], ");
+		} else {
+			stringBuf.append("\"interchanges\": \"null\", ");
+		}
+		
+		if (this.generationUnits != null) {
+			stringBuf.append("\"generationUnits\": [");
+			for (GenerationUnit generationUnit : this.generationUnits) {
+				stringBuf.append("{" + generationUnit.toString() + "}, ");
+			}
+			stringBuf.append("]");
+		} else {
+			stringBuf.append("\"generationUnits\": \"null\"");
+		}
+		
+		stringBuf.append("}");
+		return stringBuf.toString();
+	}
+
 	public Date getLastUpdate() {
 		return lastUpdate;
 	}

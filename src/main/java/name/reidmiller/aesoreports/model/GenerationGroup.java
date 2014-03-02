@@ -6,6 +6,17 @@ public class GenerationGroup {
 	private double totalNetGeneration;
 	private double dispatchedContingencyReserve;
 	
+	@Override
+	public String toString() {
+		StringBuffer stringBuf = new StringBuffer();
+		stringBuf.append("\"GenerationGroup\": {");
+		stringBuf.append("\"generatorType\": " + this.generatorType + ", ");
+		stringBuf.append("\"maximumCapability\": " + this.maximumCapability + ", ");
+		stringBuf.append("\"totalNetGeneration\": " + this.totalNetGeneration + ", ");
+		stringBuf.append("\"dispatchedContingencyReserve\": " + this.dispatchedContingencyReserve + "}");
+		return stringBuf.toString();
+	}
+	
 	public GeneratorType getGeneratorType() {
 		return generatorType;
 	}

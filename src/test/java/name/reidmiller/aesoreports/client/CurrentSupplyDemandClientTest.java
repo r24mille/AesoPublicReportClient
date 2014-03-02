@@ -8,9 +8,12 @@ import java.util.Date;
 import name.reidmiller.aesoreports.AesoPublicReportClientConfig;
 import name.reidmiller.aesoreports.model.SupplyDemand;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 public class CurrentSupplyDemandClientTest {
+	private Logger logger = LogManager.getLogger(this.getClass());
 
 	@Test
 	public void testGetDefaultCurrentSupplyDemand() {
@@ -18,6 +21,8 @@ public class CurrentSupplyDemandClientTest {
 				.currentSupplyDemandClient();
 		SupplyDemand currentSupplyDemand = currentSupplyDemandClient
 				.getDefaultCurrentSupplyDemand();
+		
+		logger.debug("Current Supply Demand in testGetDefaultCurrentSupplyDemand = " + currentSupplyDemand);
 
 		// Last Update
 		assertNotNull("Last Update could not be parsed",
